@@ -26,6 +26,7 @@ final class Test extends DashboardPageController
         $client = $this->app->make('http/client');
 
         $client->setUri($this->request->request->get('url'));
+
         $response = $client->send();
 
         $this->set('headers', $response->getHeaders());

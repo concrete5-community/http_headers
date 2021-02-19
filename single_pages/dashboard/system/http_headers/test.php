@@ -19,10 +19,17 @@ use Concrete\Core\Support\Facade\Url;
         echo $token->output('http_headers.test');
         ?>
 
+
         <div class="form-group">
+            <label class="control-label launch-tooltip"
+               title="<?php echo t('By default the login page is requested because full page caching should be disabled for that page.') ?>"
+               for="url">
+                <?php
+                echo t('URL');
+                ?>
+            </label>
             <?php
-            echo $form->label('url', t('URL'));
-            echo $form->text('url', Url::to('/'), [
+            echo $form->text('url', Url::to('/login'), [
                 'autofocus' => 1,
             ]);
             ?>
